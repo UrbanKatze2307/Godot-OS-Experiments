@@ -34,8 +34,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -84.0
+offset_top = 11.0
 offset_right = 84.0
-offset_bottom = 31.0
+offset_bottom = 42.0
 grow_horizontal = 2
 text = "Toggle Transparency"
 
@@ -44,12 +45,27 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -23.0
-offset_right = 40.0
+offset_left = 11.0
+offset_top = -64.0
+offset_right = 117.0
+offset_bottom = -12.0
 grow_vertical = 0
 text = "Screen Size: 
 Window Size: "
 
+[node name="ButtonPassthrough" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 53.0
+offset_right = 80.0
+offset_bottom = 84.0
+grow_horizontal = 2
+text = "Toggle Passthrough"
+
 [connection signal="pressed" from="ButtonShake" to="." method="_on_button_shake_pressed"]
 [connection signal="timeout" from="TimerShake" to="." method="_on_timer_shake_timeout"]
 [connection signal="pressed" from="ButtonTransparency" to="." method="_on_button_transparency_pressed"]
+[connection signal="pressed" from="ButtonPassthrough" to="." method="_on_button_passthrough_pressed"]
