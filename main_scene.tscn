@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://5akkl6ei1qo1"]
+
+[ext_resource type="Script" path="res://main_scene.gd" id="1_1nx45"]
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_1nx45")
+
+[node name="ButtonShake" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -15.5
+offset_right = 27.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shake"
+
+[node name="TimerShake" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="ButtonTransparency" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_right = 84.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Toggle Transparency"
+
+[node name="LabelScreenSize" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "Screen Size: 
+Window Size: "
+
+[connection signal="pressed" from="ButtonShake" to="." method="_on_button_shake_pressed"]
+[connection signal="timeout" from="TimerShake" to="." method="_on_timer_shake_timeout"]
+[connection signal="pressed" from="ButtonTransparency" to="." method="_on_button_transparency_pressed"]
